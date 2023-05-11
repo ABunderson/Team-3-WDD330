@@ -43,12 +43,16 @@ function cartItemTemplate(item, index) {
 }
 
 function removeFromCart() {
-  // let id = event.target.getAttribute('data-id');
-
   let currentArray = JSON.parse(localStorage.getItem(key));
-  const index = event.target.getAttribute('data-index');
-  // let currentObject = currentArray.find(item => item.Id === id);
 
+  // remove by id
+  // const id = event.target.getAttribute('data-id');
+  // const currentObject = currentArray.find(item => item.Id === id);
+  // const index = currentArray.indexOf(currentObject);
+
+  // remove by index
+  const index = event.target.getAttribute('data-index');
+  
   currentArray.splice(index, 1);
   localStorage.setItem(key, JSON.stringify(currentArray));
 
