@@ -1,5 +1,5 @@
-import productList from './productList.mjs' ; 
+import productList from "./productList.mjs";
 
-const selector = document.querySelector('.product-list');
+const selector = document.querySelector(".product-list");
 
-productList('tents', selector);
+productList("tents", selector);
