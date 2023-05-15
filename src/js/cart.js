@@ -2,10 +2,25 @@ import { getLocalStorage } from './utils.mjs';
 
 const key = 'so-cart';
 
+// Calculate the total of the cart items
+function calculateTotal() {
+  const cartItems = getLocalStorage('so-cart');
+  let total = 0;
+  for (let i = 0; i < cartItems.length; i++) {
+    total += cartItems[i].FinalPrice;
+  }
+  return total;
+}
+function displayTotal() {
+  // Calculate the total and insert it into the HTML element
+  const totalAmount = document.getElementById('totalAmount');
+  const total = calculateTotal();
+  totalAmount.textContent = `$${total}`;
+}
+
 function renderCartContents() {
   const cartItems = getLocalStorage('so-cart');
   if (cartItems == null || cartItems.length == 0) {
-
     //console.log("empty");
 
     document.querySelector(
@@ -20,7 +35,6 @@ function renderCartContents() {
     document.querySelectorAll('.removeFromCart').forEach((item) => {
       item.addEventListener('click', removeFromCart);
     });
-
   }
 }
 
@@ -53,24 +67,15 @@ function removeFromCart() {
 
   // remove by index
   const index = event.target.getAttribute('data-index');
-  
+
   currentArray.splice(index, 1);
   localStorage.setItem(key, JSON.stringify(currentArray));
 
   renderCartContents();
+  displayTotal();
 }
 
 renderCartContents();
-
-// Calculate the total of the cart items
-function calculateTotal() {
-  const cartItems = getLocalStorage('so-cart');
-  let total = 0;
-  for (let i = 0; i < cartItems.length; i++) {
-    total += cartItems[i].FinalPrice;
-  }
-  return total;
-}
 
 function showCartItems() {
   // Check if the cart is empty
@@ -79,11 +84,7 @@ function showCartItems() {
     // Show the cart footer
     const cartFooter = document.querySelector('.cart-footer');
     cartFooter.classList.remove('hide');
-
-    // Calculate the total and insert it into the HTML element
-    const totalAmount = document.getElementById('totalAmount');
-    const total = calculateTotal();
-    totalAmount.textContent = `$${total}`;
+    displayTotal();
   }
 }
 showCartItems();
