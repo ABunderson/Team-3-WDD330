@@ -201,6 +201,9 @@ button {
   grid-row: 2;
   grid-column: 3;
 }
+.hide {
+  display: none;
+}
 
 .cart-card__remove {
   color: red;

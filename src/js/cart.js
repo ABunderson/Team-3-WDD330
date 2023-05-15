@@ -1,16 +1,15 @@
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage } from './utils.mjs';
 
 const key = 'so-cart';
 
 function renderCartContents() {
   const cartItems = getLocalStorage('so-cart');
-
   if (cartItems == null || cartItems.length == 0) {
 
     //console.log("empty");
 
     document.querySelector(
-      ".product-list"
+      '.product-list'
     ).innerHTML = `<h3>Find something exciting and add it!</h3>`;
   } else {
     const htmlItems = cartItems.map((item, index) =>
@@ -62,3 +61,29 @@ function removeFromCart() {
 }
 
 renderCartContents();
+
+// Calculate the total of the cart items
+function calculateTotal() {
+  const cartItems = getLocalStorage('so-cart');
+  let total = 0;
+  for (let i = 0; i < cartItems.length; i++) {
+    total += cartItems[i].FinalPrice;
+  }
+  return total;
+}
+
+function showCartItems() {
+  // Check if the cart is empty
+  const cartItems = getLocalStorage('so-cart');
+  if (cartItems.length > 0) {
+    // Show the cart footer
+    const cartFooter = document.querySelector('.cart-footer');
+    cartFooter.classList.remove('hide');
+
+    // Calculate the total and insert it into the HTML element
+    const totalAmount = document.getElementById('totalAmount');
+    const total = calculateTotal();
+    totalAmount.textContent = `$${total}`;
+  }
+}
+showCartItems();
