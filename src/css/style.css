@@ -205,6 +205,12 @@ button {
   display: none;
 }
 
+.cart-card__remove {
+  color: red;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
