@@ -1,4 +1,4 @@
-import { getLocalStorage } from './utils.mjs';
+import { getLocalStorage } from "./utils.mjs";
 
 const key = 'so-cart';
 
@@ -6,10 +6,11 @@ function renderCartContents() {
   const cartItems = getLocalStorage('so-cart');
 
   if (cartItems == null || cartItems.length == 0) {
+
     //console.log("empty");
 
     document.querySelector(
-      '.product-list'
+      ".product-list"
     ).innerHTML = `<h3>Find something exciting and add it!</h3>`;
   } else {
     const htmlItems = cartItems.map((item, index) =>
@@ -20,6 +21,7 @@ function renderCartContents() {
     document.querySelectorAll('.removeFromCart').forEach((item) => {
       item.addEventListener('click', removeFromCart);
     });
+
   }
 }
 
