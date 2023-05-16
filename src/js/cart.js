@@ -1,4 +1,4 @@
-import { getLocalStorage } from './utils.mjs';
+import { getLocalStorage, updateCartItemCount } from './utils.mjs';
 
 const key = 'so-cart';
 
@@ -11,6 +11,7 @@ function calculateTotal() {
   }
   return total;
 }
+
 function displayTotal() {
   // Calculate the total and insert it into the HTML element
   const totalAmount = document.getElementById('totalAmount');
@@ -73,6 +74,7 @@ function removeFromCart() {
 
   renderCartContents();
   displayTotal();
+  updateCartItemCount();
 }
 
 renderCartContents();
@@ -87,4 +89,6 @@ function showCartItems() {
     displayTotal();
   }
 }
+
+updateCartItemCount();
 showCartItems();

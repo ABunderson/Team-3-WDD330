@@ -41,3 +41,18 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
   const htmlString = list.map(templateFn);
   parentElement.insertAdjacentHTML(position, htmlString.join(""));
 }
+
+export function updateCartItemCount() {
+  const cartItems = getLocalStorage('so-cart');
+  const cartItemCount = document.getElementById('cartItemCount');
+  
+  // Update the count
+  cartItemCount.textContent = cartItems.length;
+  
+  // Show/hide based on cart items
+  if (cartItems.length > 0) {
+    cartItemCount.classList.remove('hide');
+  } else {
+    cartItemCount.classList.add('hide');
+  }
+};

@@ -201,9 +201,6 @@ button {
   grid-row: 2;
   grid-column: 3;
 }
-.hide {
-  display: none;
-}
 
 .cart-card__remove {
   color: red;
@@ -228,4 +225,33 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+
+.cartLink {
+  text-emphasis: none;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 8px 13px 4px;
+  grid-template-rows: 5px 5px 5px 5px 5px;
+}
+.cart svg {
+  grid-area: 2 / 1 / 6 / 2;
+}
+.cart-item-count {
+  display: flex;
+  grid-area: 1/2/4/2;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-emphasis: none;
+  text-decoration: none;
+  font-size: x-small;
+  border-radius: 50%;
+  background-color: orange;
+  position: relative;
+  z-index: 10;
+}
+
+.hide {
+  display: none;
 }
