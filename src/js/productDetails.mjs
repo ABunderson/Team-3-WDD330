@@ -1,4 +1,4 @@
-import { setLocalStorage, getLocalStorage} from './utils.mjs';
+import { setLocalStorage, getLocalStorage, updateCartItemCount} from './utils.mjs';
 import { findProductById } from './productData.mjs';
 
 let product = {};
@@ -14,6 +14,7 @@ export default async function productDetails(productId) {
 
 function addToCart() {
     setLocalStorage("so-cart", product);
+    updateCartItemCount();
 }
 
 function renderProductDetails() {
