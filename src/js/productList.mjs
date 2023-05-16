@@ -14,11 +14,6 @@ function productCardTemplate(product) {
   </li>`
 }     
 
-// function renderList(list, el){
-//     const htmlStrings =  list.map((product) => productCardTemplate(product));
-//     el.insertAdjacentHTML('afterbegin', htmlStrings.join(''));
-// }
-
 export default function productList(category, selector){
     const data = getData(category);
     data.then((list) => {renderListWithTemplate(productCardTemplate, selector, list)});
