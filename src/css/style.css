@@ -251,7 +251,13 @@ footer {
   position: relative;
   z-index: 10;
 }
-
+.alert-list {
+  margin: 1em;
+  text-align: center;
+}
+.alert-item {
+  padding: 1em;
+}
 .hide {
   display: none;
 }
