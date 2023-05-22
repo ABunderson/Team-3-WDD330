@@ -29,6 +29,18 @@ export default async function productDetails(productId) {
 function addToCart() {
     setLocalStorage("so-cart", product);
     updateCartItemCount();
+
+      // Get the cart icon element
+    const cartIcon = document.querySelector(".cartBackpack");
+
+    // Add a CSS class to trigger the animation
+    cartIcon.classList.add("cartAnimation");
+    
+    // Remove the animation class after a certain amount of time
+    setTimeout(function() {
+    cartIcon.classList.remove("cartAnimation");
+    }, 500);
+
 }
 
 function renderProductDetails() {
