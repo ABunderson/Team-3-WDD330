@@ -258,6 +258,23 @@ footer {
 .alert-item {
   padding: 1em;
 }
+
+.cartAnimation {
+  animation: cartPulse 0.5s;
+}
+
+@keyframes cartPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .hide {
   display: none;
 }

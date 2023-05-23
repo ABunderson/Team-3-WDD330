@@ -1,5 +1,6 @@
 import { renderListWithTemplate, getLocalStorage, updateCartItemCount } from './utils.mjs';
 
+
 function cartItemTemplate(item, index) {
     const newItem = `<li class="cart-card divider">
     <a href="#" class="cart-card__image">
