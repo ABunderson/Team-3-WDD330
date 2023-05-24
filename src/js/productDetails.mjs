@@ -49,7 +49,9 @@ function renderProductDetails() {
       product.NameWithoutBrand;
     document.querySelector("#productImage").src = product.Image;
     document.querySelector("#productImage").alt = product.Name;
+    document.querySelector("#suggestedPrice").innerText = product.SuggestedRetailPrice;
     document.querySelector("#productFinalPrice").innerText = product.FinalPrice;
+    document.querySelector("#discount").innerText = 100 - Math.round(product.FinalPrice / product.SuggestedRetailPrice * 100);
     document.querySelector("#productColorName").innerText =
       product.Colors[0].ColorName;
     document.querySelector("#productDescriptionHtmlSimple").innerHTML =

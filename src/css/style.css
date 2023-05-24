@@ -147,6 +147,14 @@ button {
   margin: 0.5em 0;
 }
 
+.product-card__original-price {
+  font-size: 0.75em;
+}
+
+.product-card__discount {
+  color: red;
+}
+
 .card__brand {
   font-size: var(--small-font);
 }
