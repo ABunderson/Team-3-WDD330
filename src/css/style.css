@@ -119,8 +119,22 @@ button {
   max-width: 600px;
   margin: auto;
 }
-.products {
+.products{
   padding: 0.5em;
+}
+.products-grid {
+  padding: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.product-items{
+  text-decoration: none;
+}
+.product-captions{
+  color: black;
+  text-align: center;
+  font-weight: 600;
+
 }
 .product-list {
   display: flex;
@@ -285,4 +299,8 @@ footer {
 
 .hide {
   display: none;
+}
+
+.title{
+  text-transform: capitalize;
 }
