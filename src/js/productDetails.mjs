@@ -1,5 +1,5 @@
 import { setLocalStorage, getLocalStorage, updateCartItemCount} from './utils.mjs';
-import { findProductById } from './productData.mjs';
+import { findProductById } from './externalServices.mjs';
 
 let product = {};
 
