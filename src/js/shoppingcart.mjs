@@ -2,10 +2,10 @@ import { renderListWithTemplate, getLocalStorage, updateCartItemCount } from './
 
 
 function cartItemTemplate(item, index) {
-    const newItem = `<li class="cart-card divider">
+  const newItem = `<li class="cart-card divider">
     <a href="#" class="cart-card__image">
       <img
-        src="${item.Image}"
+        src="${item.Images.PrimarySmall}"
         alt="${item.Name}"
       />
     </a>
@@ -35,7 +35,7 @@ function calculateTotal() {
   for (let i = 0; i < cartItems.length; i++) {
     total += cartItems[i].FinalPrice;
   }
-  return total;
+  return total.toFixed(2);
 }
 
 function displayTotal() {

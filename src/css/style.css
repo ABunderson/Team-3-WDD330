@@ -119,7 +119,7 @@ button {
   max-width: 600px;
   margin: auto;
 }
-.products{
+.products {
   padding: 0.5em;
 }
 .products-grid {
@@ -127,14 +127,13 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.product-items{
+.product-items {
   text-decoration: none;
 }
-.product-captions{
+.product-captions {
   color: black;
   text-align: center;
   font-weight: 600;
-
 }
 .product-list {
   display: flex;
@@ -301,6 +300,6 @@ footer {
   display: none;
 }
 
-.title{
+.title {
   text-transform: capitalize;
 }
