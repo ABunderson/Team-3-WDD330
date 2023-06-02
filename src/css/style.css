@@ -303,3 +303,12 @@ footer {
 .title {
   text-transform: capitalize;
 }
+
+.sortDiv button {
+  display: inline;
+  font-size: var(--medium-font);
+}
+
+.sortDiv h3 {
+  display: inline;
+}
