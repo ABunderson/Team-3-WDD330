@@ -179,6 +179,7 @@ button {
 
 .product-detail {
   padding: 1em;
+  width: 70vh;
   max-width: 500px;
   margin: auto;
 }
