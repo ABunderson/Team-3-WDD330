@@ -13,6 +13,7 @@ export default defineConfig({
         product1: resolve(__dirname, 'src/product_pages/index.html'),
         productlist: resolve(__dirname, 'src/product-list/index.html'),
         checkout: resolve(__dirname, 'src/checkout/index.html'),
+        checkoutSuccess: resolve(__dirname, 'src/checkout/success.html'),
       },
     },
   },
