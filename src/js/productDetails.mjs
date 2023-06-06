@@ -1,4 +1,4 @@
-import { setLocalStorage, getLocalStorage, updateCartItemCount} from './utils.mjs';
+import { setLocalStorage, getLocalStorage, updateCartItemCount, alertMessage} from './utils.mjs';
 import { findProductById } from './externalServices.mjs';
 
 let product = {};
@@ -44,6 +44,7 @@ function addToCart() {
       // Get the cart icon element
     const cartIcon = document.querySelector(".cartBackpack");
 
+    alertMessage("added to cart!")
     // Add a CSS class to trigger the animation
     cartIcon.classList.add("cartAnimation");
     
