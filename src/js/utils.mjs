@@ -116,3 +116,11 @@ export function removeAllAlerts() {
   const alerts = document.querySelectorAll(".alert");
   alerts.forEach((alert) => document.querySelector("main").removeChild(alert));
 }
+
+export function clearHTMLWithMessage(selector, message) {
+  let htmlEl = document.querySelector(selector);
+  // clear the html where the product would be
+  htmlEl.innerHTML = "";
+  //add an error message
+  htmlEl.innerHTML = message;
+}

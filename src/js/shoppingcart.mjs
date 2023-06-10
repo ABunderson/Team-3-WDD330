@@ -16,14 +16,14 @@ function cartItemTemplate(item, index) {
     <p class="cart-card__quantity">qty: 1 | <span id="removeFromCart" data-id="${item.Id}" data-index="${index}" class="cart-card__remove removeFromCart">X</span></p>
     <p class="cart-card__price">$${item.FinalPrice}</p>
   </li>`;
-  
-    return newItem;
-  }
 
-export default function shoppingCart(){
-    const cartItems = localStorage("so-cart");
-    const outputEl = document.querySelector(".product-list");
-    renderListWithTemplate(cartItemTemplate, outputEl, cartItems);
+  return newItem;
+}
+
+export default function shoppingCart() {
+  const cartItems = localStorage("so-cart");
+  const outputEl = document.querySelector(".product-list");
+  renderListWithTemplate(cartItemTemplate, outputEl, cartItems);
 }
 
 const key = 'so-cart';

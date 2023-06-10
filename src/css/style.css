@@ -13,23 +13,28 @@
   --small-font: 0.8em;
   --large-font: 1.2em;
 }
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--font-base);
   color: var(--dark-grey);
 }
+
 img {
   max-width: 100%;
 }
+
 header {
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
 }
+
 .logo {
   line-height: 60px;
   width: 245px;
@@ -39,28 +44,32 @@ header {
   text-align: right;
   font-family: var(--font-headline);
 }
+
 .logo img {
   width: 60px;
   height: 60px;
 }
+
 .logo a {
   text-decoration: none;
   color: var(--font-body);
 }
+
 .hero {
   position: relative;
 }
+
 .hero .logo {
   position: absolute;
   left: calc(50% - 60px);
   bottom: -10px;
   background-color: white;
 }
+
 .logo--square {
   font-size: var(--small-font);
   width: 110px;
   height: 80px;
-
   flex-direction: column;
   align-items: flex-end;
   box-shadow: 1px 1px 4px var(--light-grey);
@@ -68,14 +77,17 @@ header {
   align-items: center;
   line-height: 1;
 }
+
 .logo--square img {
   width: 90px;
   height: 90px;
   margin-top: -1.3em;
 }
+
 .logo--square > div {
   margin-top: -1.7em;
 }
+
 /* utility classes */
 .highlight {
   color: var(--tertiary-color);
@@ -91,21 +103,24 @@ button {
   font-size: var(--large-font);
   cursor: pointer;
 }
+
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
+
 /* End utility classes */
 
 /* Cart icon styles */
 .cart {
-  padding-top: 1em;
+  padding-top: 0.8em;
   position: relative;
   text-align: center;
 }
 
 .cart svg {
-  width: 25px;
+  width: 30px;
 }
+
 .cart:hover svg {
   fill: gray;
 }
@@ -119,22 +134,27 @@ button {
   max-width: 600px;
   margin: auto;
 }
+
 .products {
   padding: 0.5em;
 }
+
 .products-grid {
   padding: 0.5em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
 .product-items {
   text-decoration: none;
 }
+
 .product-captions {
   color: black;
   text-align: center;
   font-weight: 600;
 }
+
 .product-list {
   display: flex;
   flex-flow: row wrap;
@@ -142,10 +162,12 @@ button {
   list-style-type: none;
   padding: 0;
 }
+
 .product-list a {
   text-decoration: none;
   color: var(--dark-grey);
 }
+
 /* Styles for product lists */
 .product-card {
   flex: 1 1 45%;
@@ -154,6 +176,7 @@ button {
   border: 1px solid var(--light-grey);
   max-width: 250px;
 }
+
 .product-card h2,
 .product-card h3,
 .product-card p {
@@ -175,6 +198,7 @@ button {
 .card__name {
   font-size: 1em;
 }
+
 /* End product list card */
 
 .product-detail {
@@ -201,9 +225,11 @@ button {
   grid-row: 1/3;
   grid-column: 1;
 }
+
 .cart-card p {
   margin-top: 0;
 }
+
 .cart-card .card__name {
   grid-row: 1;
   grid-column: 2;
@@ -235,9 +261,11 @@ button {
     max-width: 1080px;
     margin: auto;
   }
+
   .mission {
     font-size: 1.2em;
   }
+
   .cart-card {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
@@ -256,9 +284,11 @@ footer {
   grid-template-columns: 8px 13px 4px;
   grid-template-rows: 5px 5px 5px 5px 5px;
 }
+
 .cart svg {
   grid-area: 2 / 1 / 6 / 2;
 }
+
 .cart-item-count {
   display: flex;
   grid-area: 1/2/4/2;
@@ -273,10 +303,12 @@ footer {
   position: relative;
   z-index: 10;
 }
+
 .alert-list {
   margin: 1em;
   text-align: center;
 }
+
 .alert-item {
   padding: 1em;
 }
@@ -289,9 +321,11 @@ footer {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(1);
   }
@@ -312,4 +346,41 @@ footer {
 
 .sortDiv h3 {
   display: inline;
+}
+
+#searchForm {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+#searchForm input {
+  border-radius: 15px 0 0 15px;
+  height: 60%;
+  padding-left: 5px;
+  border: 1px solid grey;
+}
+
+#searchForm button {
+  float: left;
+  height: 60%;
+  padding: 5px;
+  background: var(--light-grey);
+  border: 1px solid grey;
+  /* Prevent double borders */
+  border-left: none;
+  cursor: pointer;
+  border-radius: 0 15px 15px 0;
+}
+
+#searchForm button img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.header-flex-divider {
+  display: flex;
 }

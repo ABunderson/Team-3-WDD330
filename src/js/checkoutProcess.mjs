@@ -97,7 +97,7 @@ const checkoutProcess = {
   },
 };
 
-function success(){
+function success() {
   window.location.href = '/checkout/success.html';
   localStorage.setItem('so-cart', JSON.stringify([]));
 }
