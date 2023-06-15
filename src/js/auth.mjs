@@ -15,7 +15,7 @@ export async function login(creds, redirect = '/') {
     }
 }
 
-export function isTokenValid(token) {
+function isTokenValid(token) {
     // check to make sure a token was actually passed in.
     if (token) {
         // decode the token
@@ -37,7 +37,6 @@ export function isTokenValid(token) {
 }
 
 export function checkLogin() {
-    console.log("login process")
     const token = getLocalStorage(tokenKey);
     const valid = isTokenValid(token);
     if (!valid) {
