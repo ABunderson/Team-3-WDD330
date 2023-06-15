@@ -35,7 +35,7 @@ export async function checkout(payload) {
 export async function loginRequest(creds) {
   const options = { method: 'POST', headers: { 'Content-Type': 'application/json', }, body: JSON.stringify(creds) };
   const response = await fetch(baseURL + `login`, options).then(convertToJson);
-  return response.Result;
+  return response.accessToken;
 }
 
 export async function getOrders(token) {
