@@ -335,7 +335,8 @@ footer {
   display: none;
 }
 
-.title {
+.title,
+.capitalize {
   text-transform: capitalize;
 }
 

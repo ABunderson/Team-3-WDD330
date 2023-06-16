@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,28 +11,26 @@
     <link rel="stylesheet" href="/css/style.css" />
 
     <script src="../js/login.js" type="module"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="divider" id="main-header"></header>
 
     <main class="divider">
-        <h2>Login</h2>
+      <h2>Login</h2>
 
-        <section class="login-form">
-            <form name="login">
+      <section class="login-form">
+        <form name="login">
+          <label for="username">Email</label>
+          <input name="username" id="username" required />
+          <label for="password">Password</label>
+          <input name="password" id="password" required />
 
-                <label for="username">Email</label>
-                <input name="username" id="username" required />
-                <label for="password">Password</label>
-                <input name="password" id="password" required />
-
-                <button id="loginsubmit" type="submit">Login</button>
-            </form>
-        </section>
+          <button id="loginsubmit" type="submit">Login</button>
+        </form>
+      </section>
     </main>
 
     <footer id="main-footer"></footer>
-</body>
-
+  </body>
 </html>

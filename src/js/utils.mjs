@@ -128,3 +128,33 @@ export function clearHTMLWithMessage(selector, message) {
   //add an error message
   htmlEl.innerHTML = message;
 }
+
+export function loadBreadcrumbs(mainList, item) {
+  // get header
+  const header = document.getElementById('main-header');
+
+  // create div
+  let div = document.createElement('div');
+  div.setAttribute('id', 'breadcrumb-div')
+
+  //create p
+  let p = document.createElement('p');
+
+  // create breadcrumb
+  let breadcrumb;
+  // if the item sent is an array it is from the product list page and should have a number of items
+  if (Array.isArray(item)) {
+    breadcrumb = `<p><span class="capitalize">${mainList}</span>->(${item.length} items)</p>`;
+  } else {
+    // if it is just a single item then it should have the item name
+    breadcrumb = `<p><span class="capitalize">${mainList}</span>->${item}</p>`;
+  }
+  p.innerHTML = breadcrumb;
+
+  // put it all together
+  header.after(div);
+  div.appendChild(p);
+
+  // save the category for later
+  setLocalStorage('so-bread', mainList)
+}
