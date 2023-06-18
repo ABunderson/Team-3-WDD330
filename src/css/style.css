@@ -335,7 +335,8 @@ footer {
   display: none;
 }
 
-.title {
+.title,
+.capitalize {
   text-transform: capitalize;
 }
 
@@ -384,6 +385,6 @@ footer {
 .header-flex-divider {
   display: flex;
 }
-.NewsLetter{
+.NewsLetter {
   text-align: center;
 }
