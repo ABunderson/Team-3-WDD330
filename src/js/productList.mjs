@@ -1,5 +1,5 @@
 import { getProductsByCategory } from './externalServices.mjs';
-import { renderListWithTemplate, clearHTMLWithMessage } from './utils.mjs';
+import { renderListWithTemplate, clearHTMLWithMessage, loadBreadcrumbs } from './utils.mjs';
 
 function productCardTemplate(product) {
   return `<li class="product-card">
@@ -58,6 +58,7 @@ export async function productList(selector, category, sortType) {
 
   // render out the product list to the element
   renderListWithTemplate(productCardTemplate, el, products);
+  loadBreadcrumbs(category, products);
   document.querySelector(".title").innerHTML = category;
 }
 
@@ -98,5 +99,6 @@ export async function searchProducts(searchString, selector, sortType) {
 
   // render out the product list to the element
   renderListWithTemplate(productCardTemplate, el, searched);
+  loadBreadcrumbs(searchString, searched);
   document.querySelector(".title").innerHTML = searchString;
 }

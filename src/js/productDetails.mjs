@@ -1,4 +1,4 @@
-import { setLocalStorage, getLocalStorage, updateCartItemCount, alertMessage, clearHTMLWithMessage } from './utils.mjs';
+import { setLocalStorage, getLocalStorage, updateCartItemCount, alertMessage, clearHTMLWithMessage, loadBreadcrumbs } from './utils.mjs';
 import { findProductById } from './externalServices.mjs';
 
 let product = {};
@@ -12,6 +12,7 @@ export default async function productDetails(productId) {
     if (product) {
       console.log(product);
       renderProductDetails();
+      loadBreadcrumbs(getLocalStorage('so-bread'), product.NameWithoutBrand);
 
       // once the HTML is rendered we can add a listener to Add to Cart button
       document.getElementById("addToCart").addEventListener("click", addToCart);
@@ -60,4 +61,3 @@ function renderProductDetails() {
     product.DescriptionHtmlSimple;
   document.querySelector("#addToCart").dataset.id = product.Id;
 }
-

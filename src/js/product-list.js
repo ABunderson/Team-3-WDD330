@@ -6,19 +6,23 @@ loadHeaderFooter();
 const category = getParam('category');
 const search = getParam('search');
 
+// normal category product list
 if (category) {
   productList('.product-list', category);
 
+  // sort by price if it is
   document.getElementById('priceSort').addEventListener('click', () => {
     productList('.product-list', category, 'price');
   });
+
   document.getElementById('nameSort').addEventListener('click', () => {
     productList('.product-list', category, 'name');
   });
 }
 
-//go to home page if search is pushed without a value
-if (search.length === 0) {
+// searched product list
+if (search != null && search.length === 0) {
+  // go to homepage is search is pushed without a value.
   window.location.href = '/index.html';
 } else if (search) {
   searchProducts(search, '.product-list');
@@ -26,6 +30,7 @@ if (search.length === 0) {
   document.getElementById('priceSort').addEventListener('click', () => {
     searchProducts(search, '.product-list', 'price');
   });
+
   document.getElementById('nameSort').addEventListener('click', () => {
     searchProducts(search, '.product-list', 'name');
   });
