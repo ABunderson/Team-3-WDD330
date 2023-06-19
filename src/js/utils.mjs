@@ -15,8 +15,24 @@ export function getLocalStorage(key) {
 export function setLocalStorage(key, data) {
   if (key == 'so-cart') {
     let currentArray = JSON.parse(localStorage.getItem(key)) || [];
+    let isFound = false;
+    currentArray.forEach(item => {
+      console.log(item)
+      if(item.Id == data.Id){
+        isFound = true
+        if (!item.Quantity){
+          item.Quantity = 1
+        }
+        else{
+          item.Quantity += 1
+        }
+      }
+    })
+    if(!isFound){
+      data.Quantity = 1
+      currentArray.push(data);
+    }
 
-    currentArray.push(data);
     localStorage.setItem(key, JSON.stringify(currentArray));
   } else {
     localStorage.setItem(key, JSON.stringify(data));
@@ -83,9 +99,13 @@ export function loadHeaderFooter() {
 export function updateCartItemCount() {
   const cartItems = getLocalStorage('so-cart');
   const cartItemCount = document.getElementById('cartItemCount');
+  let totalNumberOfItems = 0
+  cartItems.forEach(product =>{
+    totalNumberOfItems += product.Quantity
+  })
 
   // Update the count
-  cartItemCount.textContent = cartItems.length;
+  cartItemCount.textContent = totalNumberOfItems;
 
   // Show/hide based on cart items
   if (cartItems.length > 0) {
@@ -129,6 +149,12 @@ export function clearHTMLWithMessage(selector, message) {
   htmlEl.innerHTML = message;
 }
 
+function sendEmail(){
+  let email = document.getElementById('email')
+  setLocalStorage('email',email)
+}
+let submit = document.getElementById('newsletter-submit')
+submit.setAttribute('onClick',sendEmail)
 export function loadBreadcrumbs(mainList, item) {
   // get header
   const header = document.getElementById('main-header');

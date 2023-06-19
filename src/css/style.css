@@ -385,3 +385,6 @@ footer {
 .header-flex-divider {
   display: flex;
 }
+.NewsLetter {
+  text-align: center;
+}
