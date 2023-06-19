@@ -149,12 +149,15 @@ export function clearHTMLWithMessage(selector, message) {
   htmlEl.innerHTML = message;
 }
 
-function sendEmail(){
-  let email = document.getElementById('email')
-  setLocalStorage('email',email)
-}
-let submit = document.getElementById('newsletter-submit')
-submit.setAttribute('onClick',sendEmail)
+// TODO: Add once api endpoint for email list is created
+// function sendEmail(){
+//   let email = document.getElementById('email')
+//   setLocalStorage('email',email)
+// }
+// let submit = document.getElementById('newsletter-submit')
+// submit.setAttribute('onClick',sendEmail)
+
+
 export function loadBreadcrumbs(mainList, item) {
   // get header
   const header = document.getElementById('main-header');
